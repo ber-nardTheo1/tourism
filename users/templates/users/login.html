@@ -1,0 +1,91 @@
+{% extends "agri_tourism/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section>
+        <div class = "content-section">
+            <legend class ="border-bottom mb-8" style="font-style:italic; margin-top:10px;  margin-right:100px;">LOGIN</legend>
+            <div class="google-login">
+                <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+                <a href="" ><i class="fa-brands fa-google" style = "font-size:30px; margin-right:25px;"></i></a>
+                <a href=""><i class="fa-brands fa-facebook" style = "font-size:30px; margin-right:23px"></i>
+                <a href=""><i class="fa-brands fa-linkedin" style = "font-size:30px; margin-right:21px"></i>
+            </div>
+                <p class="or-login" style = "text-align:center; font-weight:bold; margin-top:10px; margin-right:100px"> Or </p>
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-8">
+                <form method = "post" action="http://127.0.0.1:8000/login/"> 
+                     {% csrf_token %}
+                    <fieldset class = "form-group">
+                     {{ form|crispy }}
+                    </fieldset>
+                    <div class= "form-group" style="margin-top: 4px; ">
+                        <button type="submit">Login</button>    
+                    </div>
+                </form> 
+                <div class = "border-top pt-3" style="margin-top: 6px;">
+                    <small class = "text-muted">
+                        Already Have An Account? <a style="color:black" class="ml-2" href="http://127.0.0.1:8000/register/">Sign Up</a>
+                    </small>   
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+</section>
+
+     <style>
+        section{
+            display:grid;
+            grid-template-columns:50%50%;
+            margin-left:300px;
+            text-decoration:none;
+            margin-top:140px;
+    
+           
+            
+        }
+
+        .content-section {
+            margin-top: 5px;
+            padding-left:100px;
+            border: 2px solid black;
+            border-radius:10px 20px; 
+            box-shadow:10px 10px #5f788a;
+            text-align:left;
+           
+        }
+                   
+
+        .forms-group {
+            text-align:center;
+        }
+
+       button{
+        background: white; 
+        background-color:green;
+         width:240px;
+        font-weight:bold;
+        margin-top:7px;
+       }
+
+       a{
+        text-decoration:none;
+        color:black;
+       }
+
+       a:hover{
+        color:green;
+       }
+       
+       .google-login {
+        margin-top:10px; 
+        text-align: center;
+        background-color:#5f788a;
+        width:350px;
+
+       }
+
+    </style>
+{% endblock content %}

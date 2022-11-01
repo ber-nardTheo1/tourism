@@ -1,0 +1,59 @@
+{% extends "agri_tourism/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class = "content-section"> 
+    <div class="container">
+     <div class="row">
+        <div class="col-md-8">
+        <form method = "POST"> 
+            {% csrf_token %}
+            <fieldset class = "form-group">
+               <legend style = "font-style:italic; "class ="border-bottom mb-4">Join Today</legend>
+               {{ form|crispy }}
+            </fieldset>
+            <div class= "form-group">
+                <button  type="submit">Sign up</button>    
+            </div>
+        </form> 
+        <div class = "border-top pt-3">
+            <small class = "text-muted">
+                Already Have An Account? <a class="ml-2" href="http://127.0.0.1:8000/login/">Sign in</a>
+            </small>   
+        </div>
+    </div>
+</div>
+</div>
+</div>
+     <style>
+        .content-section .container .row {
+            margin-top: 70px;
+            margin-right: 350px;
+            border: 2px solid black;
+            border-radius:10px 20px;
+            box-shadow:10px 10px #5f788a;
+            margin-bottom:30px;
+            width:550px;
+
+        }
+
+        .forms-group {
+            margin-right: 50px;
+        }
+
+        button{
+            background: white; 
+            background-color:green;
+            width:345px;
+            font-weight:bold;
+            margin-top:7px;
+           }
+           a{
+            text-decoration:none;
+            color:black;
+           }
+
+           a:hover{
+            color:green;
+           }
+    </style>
+{% endblock content %}

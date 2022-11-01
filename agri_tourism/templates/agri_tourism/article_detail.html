@@ -1,0 +1,182 @@
+{% extends "agri_tourism/base.html" %}
+{% block content %}
+<section class="flex-container">
+   <div>
+      <article class="media content-section">
+       <div class="media-body">
+         <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.author }}</a>
+            <small class="text-muted">{{ object.Date|date:"F d, Y" }}</small>
+            {% if object.author == user %}
+            <div style = "margin-top:10px; margin-left:50px; margin-bottom:0px;
+            border-top:1px solid black; text-decoration:none;">
+               <a  class="btn btn-secondary btn-sm mt-1 mb-1" href=" {% url 'article-update'  object.id %}">update</a>
+               <a class="btn btn-danger btn-sm mt-1 mb-1" href=" {% url 'article-delete'  object.id %}">delete</a>
+            </div>
+            {% endif %}
+         <h2 class="article-title">{{ object.title }}</h2>
+         <p class="article-content">{{ object.content }}</p>
+         <img class="image-content" id="image-el" src = "{{article.image.url}}">
+            </div>
+         </div>
+     </article>
+   </div> 
+      <div class="content-column-top">
+         <h2 class="side-bar-category" style="font-size:medium;"> Articles category</h2>
+         <div class="article-categories">
+            <a class="education-bar" href=""> Education </a>
+            <a class="travelling-bar"  href=""> Travelling </a>
+            <a class="farming-bar" href=""> Farming </a>
+            <a class="community-life-bar"  href="">Development</a>
+      </div>
+         <div class="more-information">
+         <a class="help-bar" style="margin-top:4px" href="">Help</a>
+         <a class="bloggers-bar" style= "margin-top:4px; margin-left:5px;" href="http://127.0.0.1:8000/register/">Bloggers </a>
+         <a class="privacy-bar" style="margin-top:4px; margin-left:5px" href="">Privacy </a>
+         <a class="terms-bar" style=" margin-top:4px;" href="">Terms</a>
+         </div>
+      </div>
+   </div> 
+</section>
+
+<style>
+
+   *{
+      margin-top:0;
+      margin-left:0;
+      margin-bottom:0;
+      margin-right:0;
+   }
+   .media .content-section {
+      margin-top:10px;
+      margin-bottom:30px;
+      border-top:1px solid;
+      
+   }
+   h2 {
+      margin-left:50px;
+      margin-top:10px;
+      border-top:1px solid black
+   }
+   p {
+      margin-left:50px;
+      margin-top:0px;
+   }
+
+   article {
+      margin-top: 20px;
+        margin-left: 90px;
+        border: 1px solid black; 
+        padding-top:3px;
+        padding-left: 10px;
+        margin-right:4px;
+        border-radius:10px;
+        box-shadow:10px 10px #5f788a;
+        width:500px;
+    }
+
+   .image-content{
+      width:300px;
+      margin-bottom:5px;
+      margin-right:20px;
+      border-radius:30px;
+      margin-left:30px
+    }
+
+    section{
+      margin-bottom:10px;
+      margin-top:70px
+    }
+
+    .mr-2{
+      margin-left:50px;
+    }
+
+    a:hover{
+      text-decoration:none;
+    }
+    a:active{
+      text-decoration:none;
+    }
+
+    a{
+      text-decoration:none;
+      color:black;
+    }
+
+    .flex-container{
+      display:grid;
+    grid-template-columns:50% 50%;
+
+    }
+
+    .content-column-top{
+      margin-top:25px;
+  
+
+    }
+
+    .side-bar-category{
+    margin-left:200px;
+    font-weight:bold;
+   
+    }
+  
+    .article-categories{
+      margin-left:200px;
+      display:grid;
+      grid-template-columns:25% 30% 30%;
+      text-align:center;
+      border-bottom: 2px solid;
+      padding-bottom:5px
+    }
+  
+    .more-information{
+      margin-left:156px;
+      display:grid;
+      grid-template-columns:25% 30% 30%;
+      text-align:center;
+      padding-bottom:5px;
+      margin-top:20px;
+      font-weight:bold;
+      text-decoration:none
+      
+    }
+
+    .education-bar{
+      border: 1px solid; 
+      margin-top:4px;
+      border-radius:20px 40px;
+
+    }
+
+   .travelling-bar{
+   border:1px solid; 
+   margin-top:4px; 
+   margin-left:5px;
+   border-radius:20px 40px;
+
+   }
+
+   .farming-bar{
+   border:1px solid;
+   margin-top:4px;
+   margin-left:5px;
+   border-radius:20px 40px;
+
+   }
+
+.community-life-bar{
+   border:1px solid; 
+   margin-top:5px;
+   border-radius:20px 40px;
+   
+
+}
+
+
+   
+
+
+
+{% endblock content %}

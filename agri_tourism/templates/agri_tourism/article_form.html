@@ -1,0 +1,30 @@
+{% extends "agri_tourism/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class = "content-section"> 
+    <div class = "container">
+        <div class = "row md-8">
+        <form method = "POST" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <fieldset class = "form-group">
+               <legend class ="border-bottom mb-4">Blog article</legend>
+               {{form|crispy }}
+               {{form.media}}
+            </fieldset>
+            <div class= "form-group">
+                <button class="btn btn-outline-info" type="submit" style= "margin-top:4px; ">Submit the Article</button>    
+            </div>
+        </form>  
+    </div>
+</div>
+</div>
+    <style>
+        .content-section {
+            margin-top: 70px;
+            margin-left:70px;
+            margin-bottom:90px;
+        }
+        
+        
+        
+{% endblock content %}

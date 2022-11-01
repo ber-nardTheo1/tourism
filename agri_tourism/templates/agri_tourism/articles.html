@@ -1,0 +1,260 @@
+{% extends "agri_tourism/base.html" %}
+{% block content %}
+<section class="flex-container">
+  <div>
+    {% for article in articles %}
+     <article class="media content-section">
+        {% load static %}
+        
+           <div class="media-body">
+              <div style="text-decoration:none; display: inline-block;" class="article-metadata">
+                <img class="rounded-circle article-img" src="{{user.profile.image.url}}">
+                <a style="text-decoration:none;" class="mr-2" href="#">{{ article.author }}</a>
+                <small class="article-date">{{ article.date|date:"F d, Y" }}</small>
+              </div>
+            <h2><a class="article-title" href="">{{ article.title }}</a></h2>
+          <p class="article-content">{{ article.content }}</p>
+          <img class="image-content" id="image-el" src = "{{arrticle.image.url}} {{arrticle.image.url}}">
+          <div class="like-share-btns">
+            
+            <button id="like-btn-el">
+                <span id="icon" onclick="likeButton()"><i class="fa-solid fa-thumbs-up" style = "font-size:20px;"></i></span>
+                <span id="count">0</span>
+                <script type= "text/javascript" src="{% static 'script.js' %}"></script>
+            </button>
+            
+              <button id="save-el" onclick="SaveLikes()"></button>
+              <button id="share-el" onclick="share()"><i class="fa-solid fa-share" style= "font-size:20px;
+                margin-left:7px;"></i></button>
+                <script type= "text/javascript" src="{% static 'script.js' %}"></script>
+          </div>
+       </div>
+     </article>
+     {% endfor %}
+  </div> 
+   <div>
+      <h2 class="side-bar-category" > Articles category</h2>
+        <div class="article-categories">
+          <a class="education-bar"  href=""> Education </a>
+          <a class="travelling-bar"  href=""> Travelling </a>
+          <a class="farming-bar"  href=""> Farming </a>
+          <a class="community-life-bar" href="">Development</a>
+   </div>
+      <div class="more-information">
+        <a class="help-bar" style="margin-top:4px" href="">Help</a>
+        <a class="bloggers-bar" style= "margin-top:4px; margin-left:5px;" href="http://127.0.0.1:8000/register/">Bloggers </a>
+        <a class="privacy-bar" style="margin-top:4px; margin-left:5px" href="">Privacy </a>
+        <a class="terms-bar" style=" margin-top:4px;" href="">Terms</a>
+      </div>
+      </div>
+    </div> 
+
+</section>
+ 
+
+
+ <style>
+ 	
+ 	*{
+ 		margin: 0px;
+ 		padding: 0 px;
+ 	}
+
+ 	.media .content-section .media-body {
+ 		padding-top: 100px;
+ 		margin-top: 10px;
+
+  
+
+ 	}
+
+    article {
+      margin-top: 20px;
+        margin-left: 90px;
+        border: 1px solid black; 
+        padding-top:3px;
+        padding-left: 10px;
+        margin-right:4px;
+        border-radius:10px;
+        box-shadow:10px 10px #5f788a;
+        width:500px;
+    }
+
+    article::after{
+      margin-top:15px;
+
+    }
+
+    article::before{
+      margin-bottom:15px;
+    }
+
+    article, a {
+        color: black;
+        text-decoration:none;
+    }
+
+    article, h2 {
+        font-size: medium;
+        border-bottom: none;
+    }
+
+     .article-metadata {
+      padding-bottom: 1px;
+      margin-bottom: 4px;
+      display: inline-block;
+      margin-top:5px;
+      padding-right:10px;
+      border-bottom:1px solid;
+      width:480px;
+    }
+
+    .article-metadata a:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+  .article-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 16px;
+  display: inline-block;
+   
+}
+    
+    .article-svg {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle;
+    }
+
+    .account-img {
+      height: 125px;
+      width: 125px;
+      margin-right: 20px;
+      margin-bottom: 16px;
+    }
+
+    .account-heading {
+      font-size: 2.5rem;
+    }
+
+    .image-content{
+
+      width:300px;
+      margin-bottom:5px;
+      border-radius:30px;
+      margin-right:5px;
+      margin-left:60px;
+    }
+
+    section{
+      margin-bottom:20px;
+      margin-top:70px
+    }
+
+  .like-share-btns{
+    width:480px;
+    margin-top:2px;
+    background-color:white;
+    margin-left:0px;
+    display:inline-block;
+    border-bottom:1px solid black;
+  }
+
+  button{
+    margin: 4px 0;
+			background: white;
+			color: black;
+			font-weight: bold;
+			cursor: pointer;
+			text-align:center;
+			align-content:center;
+  }
+
+  .flex-container{
+    display:grid;
+    grid-template-columns:50% 50%;
+
+  }
+
+  .side-bar-category{
+  margin-left:200px;
+  font-weight:bold;
+
+  }
+
+  .article-categories{
+    margin-left:200px;
+    display:grid;
+    grid-template-columns:25% 30% 30%;
+    text-align:center;
+    border-bottom: 1px solid;
+    padding-bottom:5px
+  }
+
+  .more-information{
+    margin-left:156px;
+    display:grid;
+    grid-template-columns:25% 30% 30%;
+    text-align:center;
+    padding-bottom:5px;
+    margin-top:20px;
+    font-weight:bold;
+    text-decoration:none
+    
+
+  }
+
+  a:hover{
+    text-decoration:none;
+  }
+  a:active{
+    text-decoration:none;
+  }
+
+  .mr-2{
+    border-radius:2px solid;
+  }
+
+  .education-bar{
+    border: 1px solid; 
+    margin-top:4px;
+    border-radius:10px;
+
+  }
+
+ .travelling-bar{
+ border:1px solid; 
+ margin-top:4px; 
+ margin-left:5px;
+ border-radius:10px; 
+
+ }
+
+ .farming-bar{
+ border:1px solid;
+ margin-top:4px;
+ margin-left:5px;
+ border-radius:10px; 
+
+ }
+
+.community-life-bar{
+ border:1px solid; 
+ margin-top:5px;
+ border-radius:10px; 
+
+}
+
+small{
+  margin-left:70px;
+}
+
+
+
+  
+
+  
+ </style>
+{% endblock %}

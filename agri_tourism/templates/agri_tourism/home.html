@@ -1,0 +1,253 @@
+
+{% extends "agri_tourism/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="wrapper">
+	<div class="image-content">
+
+  <img class="img-farm relative-top" src={% static 'farm.jpg' %} />
+
+	</div>
+ </div>
+
+<section class="news-cover relative-bottom">
+	<div class="content-section">
+		<div class="contTitleWrap">
+	<h2 class="contTitle"> News&Topics </h2>
+	</div>
+	<div class="newsListIndex">
+		<div class="row">
+           <div class="col-md-8">
+	<ul style="list-style:none;">
+
+	        <li>
+	<p class="newsDate" id = "news-Date"style="display: inline-block;">2022.08.19</p>
+	<p class="newsIcon" id="news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href="" target="_blank">Notice of Change of Directors</a></p>
+	</li>
+	    
+	        <li>
+	<p class="newsDate" id = "news-Date"  style="display: inline-block;">2022.07.19</p>
+	<p class="newsIcon" id="news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href="" target="_blank">Notice of Partial Amendments to the Articles of Incorporation</a></p>
+	</li>
+	    
+	        <li>
+	<p class="newsDate" id="news-Date" style="display: inline-block;">2022.07.19</p>
+	<p class="newsIcon" id="news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href="" target="_blank">Notice of Change of Directors</a></p>
+	</li>
+	    
+	        <li>
+	<p class="newsDate"  id="news-Date" style="display: inline-block;">2022.07.15</p>
+	<p class="newsIcon"  id="news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href="" target="_blank">Consolidated Financial Report FY2021 (June 1, 2021 to May 31, 2022)</a></p>
+	</li>
+	    
+	        <li>
+	<p class="newsDate" id="news-Date" style="display: inline-block;">2022.05.25 </p>
+	<p class="newsIcon" id="news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href="" target="_blank">Notice Regarding Revision of Year-end Dividend Forecast</a></p>
+	</li>
+	    
+	        <li>
+	<p class="newsDate " id="news-Date" style="display: inline-block;">2022.04.27</p>
+	<p class="newsIcon"  id= "news-Icon" style="display: inline-block;"></p>
+	<p class="newsTitle" id="news-title" style="display: inline-block;"><a href=""> BUZZPORT</a><br /></p>
+	</li>
+	    
+
+	</ul>
+	</div>
+
+		</div>
+	</div>
+</div>
+</section>
+
+<div class="Ttitle">
+	<h2 style="margin-left:0px; text-align: center; font-size: large;"> Discover More </h2>
+</div>
+
+<div class="media-scroller">
+	<div class="TitleWrap">
+	  <ul>
+	  	<li>
+		<p><img src={% static 'farming.jpg' %} style=" width:300px; height: 200px; border-radius:30px;" /></p>
+		<p><a href="" target="_blank">Agriculture</a></p>
+		<p> There are different smart-agriculture activities happening in Awaji. You can explore on how farmers in Awaji are using dissimilar farming methods and technology to combat climate change</p>
+		</li>
+		 </ul>
+	</div>	  
+	    <div>
+    	  <ul>
+	        <li>
+	<p><img src={% static 'restaurants.jpg' %} style="width:300px; height: 200px; border-radius:30px;" /></p>
+	<p><a href="" target="_blank">Restaurants</a></p>
+	<p> You can try different authentic Awaji food.</p>
+	</li>
+   </ul>
+    </div>
+	    
+	    <div>
+	    	<ul>
+	    	  <li>
+			<p><img src= {% static 'cycling.jpg' %} style=" width:300px; height: 200px; border-radius:30px;" id=""/></p>
+			<p><a href="" target="_blank">Cycling</a></p>
+			<p> Awaji is famous of cycling. You can cycle around the Awaji island and experience its beautiful nature.</p>
+			</li>
+		</ul>
+	   </div>
+
+	<div>
+	    <ul>
+	    	<li>
+			<p><img src={% static 'shrine.jpg'%} style=" width:300px; height: 200px; border-radius:30px;" id=""/></p>
+			<p><a href="" target="_blank">Cultural and traditional</a></p>
+			<p> There are different smart-agriculture activities happening in Awaji. You can explore on how farmers in Awaji are using dissimilar farming methods and technology to combat climate change</p>
+			</li>
+	    </ul>
+	    	
+	 </div>
+
+	 <div>
+	    <ul>
+	    	<li>
+			<p><img src={% static 'home-stay.jpg'%} style=" width:300px; height: 200px; border-radius:30px;" id=""/></p>
+			<p><a style="text-decoration:none;" href="" target="_blank">Home Stay program</a></p>
+			<p> Home stay program will help you get connected to local people in Awaji. The program will also allow you work with the family in their farmers and experience how they grow their crops.</p>
+			</li>
+	    </ul>
+	    	
+	 </div>
+	    
+	</h2>
+</div>
+</div>
+</div>
+
+
+	<style>
+
+		* {
+			padding: 0px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;
+			border: 0px 0px 0px 0px;
+		}
+
+
+		.wrapper{
+			position: relative;
+			padding-top: 100 px;
+			margin-top: 100 px;
+			margin: 10px 0px;
+			display: inline-block;
+			border-bottom: 4px solid #e3e3e3
+
+		}
+
+		.img-farm { 
+			padding-top: 100 px;
+			margin: 20px 0px;
+			width: 100%;
+
+
+
+
+		  }
+
+		.news-cover {
+		margin-bottom: 20px; 
+		color: black;
+		margin: 10px 0px;
+		
+		
+
+
+		}
+
+		.contTitle {
+			padding-top: 20 px;
+			margin-left: 30px;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		
+
+		p {  
+			color: black;
+			list-style: none;	
+
+		 }
+
+		h2 { 
+
+		padding-top: 10px;
+		font-size: medium; 
+
+	     }
+
+
+		a {
+			color: black;
+			background-color: none; 
+			margin-left: 0px;
+			text-decoration:none;
+			
+
+		}
+
+		.image-content {
+			display: grid;
+		}
+
+		.content {
+		  background: #ffffff;
+
+		  margin-bottom: 10px;
+		  text-align: right;
+		  padding-left: 30px;
+		  
+		 
+		}
+
+		.media-scroller {
+			margin-right: 40px;
+			display: flex;
+			grid-auto-flow: row;
+			grid-auto-columns: 25%;
+			overflow-x: auto;
+			overflow-y: hidden;
+			overscroll-behavior-inline: contain;
+			
+		}
+
+		.opportunities-content {
+			margin-right: 600px;
+			display: flex;
+			grid-auto-flow: row;
+			grid-auto-columns: 25%;	
+			
+		}
+
+		.media-scroller a:hover{
+			text-decoration:none;
+		  }
+		  .media-scroller a:active{
+			text-decoration:none;
+		  }
+
+		  li:hover{
+			text-decoration:none;
+		  }
+		  li:active{
+			text-decoration:none;
+		  }
+
+
+</style>
+{% endblock %}
